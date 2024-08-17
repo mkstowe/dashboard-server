@@ -6,4 +6,6 @@ const app = new Hono();
 app.route("/options", options);
 app.route("/hass", hass);
 
+app.get("/", (c) => c.text("Hello Hono!"));
+
 export default app;

@@ -2,7 +2,7 @@
   "name": "dashboard-server",
   "type": "module",
   "scripts": {
-    "build": "bun build src/index.ts --outdir=dist --minify --target=bun",
+    "build": "bun build src/index.ts --outfile=dist/_worker.js --minify --target=bun",
     "dev:vite": "vite",
     "build:vite": "vite build",
     "preview": "wrangler pages dev",
