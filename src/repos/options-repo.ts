@@ -5,9 +5,9 @@ export async function getOptions() {
 }
 
 export async function getOptionsByGroup(group: string) {
-  // return await db
-    // .selectFrom("dropdownOptions")
-    // .selectAll()
-    // .where("group", "=", group)
-    // .execute();
+  return await db
+    .selectFrom("dropdownOptions")
+    .selectAll()
+    .where("group", "=", group)
+    .execute();
 }
