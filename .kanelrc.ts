@@ -1,8 +1,8 @@
-const { makeKyselyHook } = require("kanel-kysely");
+import { makeKyselyHook } from "kanel-kysely";
 
 require("dotenv").config();
 
-/** @type {import('kanel').Config} */
+// /** @type {import('kanel').Config} */
 module.exports = {
   connection: process.env.DATABASE_URL,
 
