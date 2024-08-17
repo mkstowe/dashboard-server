@@ -1,0 +1,37 @@
+{
+  "name": "dashboard-server",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "wrangler pages dev",
+    "deploy": "bun run build && wrangler pages deploy",
+    "db:migrate:up": "tsx -r dotenv/config ./src/db/migrate latest",
+    "db:migrate:down": "tsx -r dotenv/config ./src/db/migrate down",
+    "db:migrate:redo": "tsx -r dotenv/config ./src/db/migrate redo && bun run db:generate:types",
+    "db:migrate:create": "tsx -r dotenv/create ./src/db/migrate create initial",
+    "db:seed": "tsx -r dotenv/config ./src/db/seed",
+    "db:reset": "bun run db:migrate:redo && bun run db:seed",
+    "db:generate:types": "kanel"
+  },
+  "dependencies": {
+    "hono": "^4.5.5",
+    "kysely": "^0.27.4",
+    "kysely-migration-cli": "^0.4.2",
+    "pg": "^8.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "@hono/vite-cloudflare-pages": "^0.4.2",
+    "@hono/vite-dev-server": "^0.14.0",
+    "@types/pg": "^8.11.6",
+    "dotenv": "^16.4.5",
+    "kanel": "^3.9.1",
+    "kanel-kysely": "^0.5.0",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.2.12",
+    "wrangler": "^3.57.2"
+  }
+}
