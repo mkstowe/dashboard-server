@@ -14,6 +14,6 @@ app.use('/*', cors(
 app.route("/options", options);
 app.route("/hass", hass);
 
-app.get('/wake', (c) => c.text(''));
+app.get('/wake', (c) => c.text('Wakey wakey'));
 
 export default app;
