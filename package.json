@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "bun build src/index.ts --outfile=dist/index.js --minify --target=node",
-    "dev:vite": "vite",
+    "dev": "vite",
     "build:vite": "vite build",
     "preview": "wrangler pages dev",
     "deploy": "bun run build && wrangler pages deploy",
@@ -27,6 +27,7 @@
     "@types/pg": "^8.11.6",
     "dotenv": "^16.4.5",
     "esbuild": "^0.23.1",
+    "home-assistant-js-websocket": "^9.4.0",
     "kanel": "^3.9.1",
     "kanel-kysely": "^0.5.0",
     "tsx": "^4.17.0",

@@ -16,8 +16,22 @@ import {
   updateOptions,
   updateService,
 } from "../repos/hass-repo";
+import { createLongLivedTokenAuth } from "home-assistant-js-websocket";
 
 export const hass = new Hono();
+
+// ┌
+// │ Token
+// └
+
+hass.get("/token", async (c) => {
+  const auth = createLongLivedTokenAuth(
+    process.env.HASS_URL!,
+    process.env.HASS_ACCESS_TOKEN!
+  )
+
+  return c.json(auth);
+});
 
 // ┌
 // │ Entities
