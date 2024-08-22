@@ -22,7 +22,7 @@ app.use(
   })
 );
 
-// app.use("*", oidcAuthMiddleware());
+app.use("*", oidcAuthMiddleware());
 
 app.route("/options", options);
 app.route("/hass", hass);

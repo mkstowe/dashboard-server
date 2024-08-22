@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "bun build src/index.ts --outfile=dist/index.js --minify --target=node",
-    "dev": "vite",
+    "dev": "bun run --hot src/index.ts",
     "build:vite": "vite build",
     "preview": "wrangler pages dev",
     "deploy": "bun run build && wrangler pages deploy",
