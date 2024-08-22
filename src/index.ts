@@ -19,9 +19,11 @@ app.use(
   "/*",
   cors({
     origin: [
+      "*",
       "http://localhost:4200",
       "https://mkstowe.com",
       "https://mkstowe-dash.us.auth0.com",
+      "https://mkstowe-dash.us.auth0.com/*",
       "https://mkstowe-dash.us.auth0.com/authorize",
     ],
   })
